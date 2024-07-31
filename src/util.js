@@ -5,7 +5,7 @@ export function $$ (selector, root = document) {
 export function refreshURL (url) {
 	let href = new URL(url);
 	href.searchParams.set("forceReload", Date.now());
-	link.href = href;
+	return href;
 }
 
 /**

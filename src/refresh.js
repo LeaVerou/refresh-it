@@ -12,17 +12,18 @@ export default function refresh ({root, elements}) {
 			props = {[props]: true};
 		}
 
-		for (let prop in props) {
-			let spec = props[prop];
-
-			if (spec === true) {
-				// Simple attribute
-				if (properties.has(prop) || element.hasAttribute(prop)) {
-					element[prop] = refreshURL(element[prop]);
+		for (let element of $$(selector, root)) {
+			for (let prop in props) {
+				let spec = props[prop];
+				if (spec === true) {
+					// Simple attribute
+					if (properties.has(prop) || element.hasAttribute(prop)) {
+						element[prop] = refreshURL(element[prop]);
+					}
 				}
-			}
-			else if (is(spec, "RegExp")) {
-				element[prop] = refreshURLs(element[prop], spec);
+				else if (is(spec, "RegExp")) {
+					element[prop] = refreshURLs(element[prop], spec);
+				}
 			}
 		}
 	}
