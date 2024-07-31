@@ -30,5 +30,10 @@ export default function refresh ({root, elements}) {
 	for (let iframe of $$("iframe", root)) {
 		iframe.contentDocument && refresh({root: iframe.contentDocument, elements});
 	}
+
+	let shadowRoots = $$("*", root).map(e => e.shadowRoot).filter(Boolean);
+	for (let shadowRoot of shadowRoots) {
+		refresh({root: shadowRoot, elements});
+	}
 }
 
