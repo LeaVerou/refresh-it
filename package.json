@@ -1,0 +1,25 @@
+{
+  "name": "refresh-it",
+  "version": "2.0.0",
+  "description": "A set of bookmarklets to refresh page resources without a page reload.",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c _build/rollup.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leaverou/refresh-it.git"
+  },
+  "author": "Lea Verou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leaverou/refresh-it/issues"
+  },
+  "homepage": "https://github.com/leaverou/refresh-it#readme",
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup": "^4.19.1"
+  }
+}
