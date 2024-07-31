@@ -5,7 +5,9 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "build": "rollup -c _build/rollup.config.js",
+    "build:js": "rollup -c _build/rollup.config.js",
+    "build:bookmarklet": "node _build/bookmarklets.js",
+    "build": "npm run build:js && npm run build:bookmarklet",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
