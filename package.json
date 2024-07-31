@@ -1,6 +1,6 @@
 {
   "name": "refresh-it",
-  "version": "2.0.0",
+  "version": "3.0.0—alpha.1",
   "description": "A set of bookmarklets to refresh page resources without a page reload.",
   "main": "src/index.js",
   "type": "module",

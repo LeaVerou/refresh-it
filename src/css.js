@@ -1,15 +1,10 @@
-let $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
+import refresh from "./refresh.js";
 
-let refresh = (document) => {
-	for (let link of $$("link[rel=stylesheet][href]", document)) {
-		let href = new URL(link.href);
-		href.searchParams.set("forceReload", Date.now());
-		link.href = href;
+refresh(document, {
+	elements: {
+		"link[rel=stylesheet]": "href",
+		"style": {
+			"textContent": /@import url\((?<url>[^)]+)\)/g,
+		},
 	}
-
-	for (let iframe of $$("iframe", document)) {
-		iframe.contentDocument && refresh(iframe.contentDocument);
-	}
-}
-
-refresh();
+});
