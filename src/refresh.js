@@ -2,7 +2,7 @@ import { $$, refreshURL, refreshURLs, toArray, is } from './util.js';
 
 let properties = new Set(["textContent", "innerHTML"])
 
-export default function refresh ({root, elements}) {
+export default function refresh ({root = document, elements}) {
 	for (let selector in elements) {
 		let props = elements[selector];
 		if (Array.isArray(props)) {
