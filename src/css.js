@@ -1,6 +1,6 @@
 import refresh from "./refresh.js";
 
-refresh(document, {
+refresh({
 	elements: {
 		"link[rel=stylesheet]": "href",
 		"style": {
