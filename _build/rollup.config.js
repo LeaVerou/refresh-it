@@ -7,5 +7,5 @@ export default ["css", "embeds", "media", "images", "resources"].map(id => ({
 		format: "esm",
 		sourcemap: false,
 	},
-	plugins: [terser()]
+	plugins: [terser({ module: true, compress: false })]
 }));
