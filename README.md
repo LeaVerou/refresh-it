@@ -4,7 +4,7 @@ A set of bookmarklets to refresh page resources without a page reload.
 An alternative to the heavyweight processes involving local servers.
 
 In 2008, [Paul Irish posted the first Refresh CSS bookmarklet](https://www.paulirish.com/2008/how-to-iterate-quickly-when-debugging-css/) to refresh all stylesheets on the current page.
-Despite the amount of tools, plugins, servers to live reload released over the years, I kept coming back to it, so eventually I decided to improve it.
+Despite the amount of tools, plugins, servers to live reload released over the years, I kept coming back to it, so [eventually](https://lea.verou.me/blog/2018/09/refresh-css-bookmarklet-v2/) I decided to improve it.
 
 It works everywhere: locally or remotely, on any domain and protocol.
 No need to set up anything, no need to alter your process in any way.
