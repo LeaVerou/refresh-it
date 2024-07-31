@@ -1,1 +1,0 @@
-let e=(e,t=document)=>Array.from(t.querySelectorAll(e)),t=r=>{for(let t of e("link[rel=stylesheet][href]",r)){let e=new URL(t.href);e.searchParams.set("forceReload",Date.now()),t.href=e}for(let o of e("iframe",r))o.contentDocument&&t(o.contentDocument)};t();
