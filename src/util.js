@@ -3,9 +3,12 @@ export function $$ (selector, root = document) {
 }
 
 export function refreshURL (url) {
-	let href = new URL(url);
+	// location is not always accurate, but if we're only getting the local bit it doesn't matter much
+	let href = new URL(url, location);
+	let localOld = href.search + href.hash;
 	href.searchParams.set("forceReload", Date.now());
-	return href;
+	let localNew = href.search + href.hash;
+	return localOld ? url.replace(localOld, localNew) : url + localNew;
 }
 
 /**
