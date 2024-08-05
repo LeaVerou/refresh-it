@@ -1,9 +1,4 @@
 import refresh from "./refresh.js";
+import { embeds } from "./spec.js";
 
-refresh({
-	elements: {
-		"iframe": "src",
-		"embed": "src",
-		"use": ["href", "xlink:href"], // SVG
-	}
-});
+refresh({ elements: embeds });

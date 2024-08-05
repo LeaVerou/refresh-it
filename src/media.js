@@ -1,10 +1,4 @@
 import refresh from "./refresh.js";
+import { media } from "./spec.js";
 
-refresh({
-	elements: {
-		"video": ["src", "poster"],
-		"audio": "src",
-		"video > source": "src",
-		"audio > source": "src",
-	}
-});
+refresh({ elements: media });

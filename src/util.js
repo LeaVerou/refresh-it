@@ -1,3 +1,20 @@
+export function walkElements (callback, selector = "*", root = document) {
+	for (let element of $$(selector, root)) {
+		callback(element);
+	}
+
+	for (let iframe of $$("iframe", root)) {
+		if (iframe.contentDocument) {
+			walkElements(callback, selector, iframe.contentDocument);
+		}
+	}
+
+	let shadowRoots = $$("*", root).map(e => e.shadowRoot).filter(Boolean);
+	for (let shadowRoot of shadowRoots) {
+		walkElements(callback, selector, shadowRoot);
+	}
+}
+
 export function $$ (selector, root = document) {
 	return Array.from(root.querySelectorAll(selector));
 }

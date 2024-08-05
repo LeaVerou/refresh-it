@@ -1,8 +1,7 @@
 /**
  * Refresh ALL THE THINGS!
  */
+import refresh from "./refresh.js";
+import * as spec from "./spec.js";
 
-import "./css.js";
-import "./embeds.js";
-import "./media.js";
-import "./images.js";
+refresh({ elements: {...spec} });

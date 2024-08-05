@@ -1,10 +1,4 @@
 import refresh from "./refresh.js";
+import { css } from "./spec.js";
 
-refresh({
-	elements: {
-		"link[rel=stylesheet]": "href",
-		"style": {
-			"textContent": /@import url\((?<url>[^)]+)\)/g,
-		},
-	}
-});
+refresh({ elements: css });
